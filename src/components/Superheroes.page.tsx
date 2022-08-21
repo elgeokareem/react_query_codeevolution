@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-interface SuperHeroesType {
-  id: number;
-  name: string;
-  alterEgo: string;
-}
+import { SuperHeroesType } from "../types";
 
 export default function SuperHeroesPage() {
   const [isLoading, setIsLoading] = useState(true);
