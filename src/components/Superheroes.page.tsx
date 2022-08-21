@@ -5,6 +5,7 @@ import { SuperHeroesType } from "../types";
 export default function SuperHeroesPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<SuperHeroesType[]>([]);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     axios
@@ -14,13 +15,17 @@ export default function SuperHeroesPage() {
         setIsLoading(false);
       })
       .catch(err => {
-        console.log(err);
-        1;
+        setError(err.message);
+        setIsLoading(false);
       });
   }, []);
 
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
   }
 
   return (
