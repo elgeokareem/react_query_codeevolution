@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+interface SuperHeroesType {
+  id: number;
+  name: string;
+  alterEgo: string;
+}
+
 export default function SuperHeroesPage() {
-  const [isLoadiing, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState<SuperHeroesType[]>([]);
 
   useEffect(() => {
     axios
@@ -18,9 +24,16 @@ export default function SuperHeroesPage() {
       });
   }, []);
 
-  if (isLoadiing) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  return <div></div>;
+  return (
+    <>
+      <h2>Super Heroes Page</h2>
+      {data.map(item => (
+        <div key={item.id}>{item.name}</div>
+      ))}
+    </>
+  );
 }
