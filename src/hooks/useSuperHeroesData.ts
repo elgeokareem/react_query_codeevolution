@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery, UseQueryOptions } from "react-query";
 import axios, { AxiosError } from "axios";
 
 import type { SuperHeroesType } from "../types";
