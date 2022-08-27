@@ -1,4 +1,5 @@
 import { AxiosError } from "axios";
+import { Link } from "react-router-dom";
 import { useSuperHeroesData } from "../hooks/useSuperHeroesData";
 
 import type { SuperHeroesType } from "../types";
@@ -27,12 +28,17 @@ export default function RQSuperHeroesPage() {
     <>
       <h2>RQ Super Heroes Page</h2>
       <button onClick={() => refetch()}>fetch HEROS</button>
-      {/*data without select {data?.map(hero => {
-        return <div key={hero.id}>{hero.name}</div>;
-      })} */}
-      {data?.map((heroName, index) => {
-        return <div key={index}>{heroName}</div>;
+      data without select{" "}
+      {data?.map(hero => {
+        return (
+          <div key={hero.id}>
+            <Link to={`/rqsuperheroes/${hero.id}`}>{hero.name}</Link>
+          </div>
+        );
       })}
+      {/* {data?.map((heroName, index) => {
+        return <div key={index}>{heroName}</div>;
+      })} */}
     </>
   );
 }

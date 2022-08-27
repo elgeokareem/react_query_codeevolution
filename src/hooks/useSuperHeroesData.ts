@@ -9,14 +9,14 @@ async function fetchSuperHeroes() {
 }
 
 export const useSuperHeroesData = (onSuccess: any, onError: any) => {
-  return useQuery<SuperHeroesType[], AxiosError, string[]>(
+  return useQuery<SuperHeroesType[], AxiosError>(
     "super-heroes",
     fetchSuperHeroes,
     {
       staleTime: 5000,
       onSuccess,
-      onError,
-      select: data => data.map(hero => hero.name)
+      onError
+      // select: data => data.map(hero => hero.name)
     }
   );
 };
