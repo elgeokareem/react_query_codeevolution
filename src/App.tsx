@@ -4,6 +4,7 @@ import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import SuperHeroesPage from "./components/Superheroes.page";
 import RQSuperHeroesPage from "./components/RQSuperHeroes.page";
 import RQSuperHeroPage from "./components/RQSuperHero";
+import ParallelQueriesPage from "./components/ParallelQueries.page";
 import HomePage from "./components/Home.page";
 
 const queryClient = new QueryClient();
@@ -23,7 +24,8 @@ function App() {
           }}
         >
           <Link to="/">Home</Link> | <Link to="/superheroes">Super Heroes</Link>{" "}
-          | <Link to="/rqsuperheroes">RQ Super Heroes</Link>
+          | <Link to="/rqsuperheroes">RQ Super Heroes</Link> |{" "}
+          <Link to="/rq-parallel">RQ Parallel</Link>
         </nav>
 
         <Routes>
@@ -31,6 +33,7 @@ function App() {
           <Route path="superheroes" element={<SuperHeroesPage />} />
           <Route path="rqsuperheroes" element={<RQSuperHeroesPage />} />
           <Route path="rqsuperheroes/:heroId" element={<RQSuperHeroPage />} />
+          <Route path="rq-parallel" element={<ParallelQueriesPage />} />
         </Routes>
       </BrowserRouter>
 

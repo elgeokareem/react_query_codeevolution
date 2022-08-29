@@ -15,5 +15,19 @@
       "name": "Spiderman",
       "alterEgo": "Peter Parker"
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Chandler Bing"
+    },
+    {
+      "id": 2,
+      "name": "Ross Geller"
+    },
+    {
+      "id": 3,
+      "name": "Joey Tribbiani"
+    }
   ]
 }
