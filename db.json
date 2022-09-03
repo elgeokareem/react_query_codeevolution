@@ -29,5 +29,17 @@
       "id": 3,
       "name": "Joey Tribbiani"
     }
+  ],
+  "users": [
+    {
+      "id": "elkareem123@gmail.com",
+      "channelId": "codeevolution"
+    }
+  ],
+  "channels": [
+    {
+      "id": "codeevolution",
+      "courses": ["react", "flutter", "android"]
+    }
   ]
 }
