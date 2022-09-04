@@ -41,5 +41,39 @@
       "id": "codeevolution",
       "courses": ["react", "flutter", "android"]
     }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "red"
+    },
+    {
+      "id": 2,
+      "label": "green"
+    },
+    {
+      "id": 3,
+      "label": "blue"
+    },
+    {
+      "id": 4,
+      "label": "yellow"
+    },
+    {
+      "id": 5,
+      "label": "orange"
+    },
+    {
+      "id": 6,
+      "label": "purple"
+    },
+    {
+      "id": 7,
+      "label": "pink"
+    },
+    {
+      "id": 8,
+      "label": "black"
+    }
   ]
 }
