@@ -3,3 +3,8 @@ export interface SuperHeroesType {
   name: string;
   alterEgo: string;
 }
+
+export interface Colors {
+  id: number;
+  label: string;
+}
