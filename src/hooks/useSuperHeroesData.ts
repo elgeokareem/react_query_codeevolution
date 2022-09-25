@@ -4,15 +4,9 @@ import {
   useMutation,
   useQueryClient
 } from "react-query";
-<<<<<<< HEAD
-import axios, { AxiosError } from "axios";
-=======
 import axios, { AxiosError, AxiosResponse } from "axios";
->>>>>>> 5ec881a (22. query invalidation, updating when mutating data with http requests)
 
 import type { SuperHeroesType, AddSuperHero } from "../types";
-
-type lol = SuperHeroesType[] | undefined;
 
 async function fetchSuperHeroes() {
   const res = await axios.get("http://localhost:4000/superheroes");
@@ -28,11 +22,6 @@ const addSuperHero = (hero: AddSuperHero) => {
 export const useAddSuperHeroData = () => {
   const queryClient = useQueryClient();
   return useMutation(addSuperHero, {
-<<<<<<< HEAD
-    onSuccess: () => {
-      // the key is the same as the one used in useSuperHeroesData
-      queryClient.invalidateQueries("super-heroes");
-=======
     onSuccess: (hero: AxiosResponse<SuperHeroesType[]>) => {
       // the key is the same as the one used in useSuperHeroesData
       // queryClient.invalidateQueries("super-heroes");
@@ -42,7 +31,6 @@ export const useAddSuperHeroData = () => {
       queryClient.setQueryData("super-heroes", (oldQueryData: any) => {
         return [...oldQueryData, hero.data];
       });
->>>>>>> 5ec881a (22. query invalidation, updating when mutating data with http requests)
     }
   });
 };
