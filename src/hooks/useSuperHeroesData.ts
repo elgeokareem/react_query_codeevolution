@@ -1,4 +1,9 @@
-import { useQuery, UseQueryOptions, useMutation } from "react-query";
+import {
+  useQuery,
+  UseQueryOptions,
+  useMutation,
+  useQueryClient
+} from "react-query";
 import axios, { AxiosError } from "axios";
 
 import type { SuperHeroesType, AddSuperHero } from "../types";
@@ -11,6 +16,17 @@ async function fetchSuperHeroes() {
 // mutation function
 const addSuperHero = (hero: AddSuperHero) => {
   return axios.post("http://localhost:4000/superheroes", hero);
+};
+
+// mutation hook
+export const useAddSuperHeroData = () => {
+  const queryClient = useQueryClient();
+  return useMutation(addSuperHero, {
+    onSuccess: () => {
+      // the key is the same as the one used in useSuperHeroesData
+      queryClient.invalidateQueries("super-heroes");
+    }
+  });
 };
 
 export const useSuperHeroesData = (onSuccess: any, onError: any) => {
@@ -32,7 +48,3 @@ export const useSuperHeroesData = (onSuccess: any, onError: any) => {
 // refetchOnWindowFocus: true // Si se pone el foco en la ventana, se refetcha
 // refetchInterval: 2000 // Cada cuanto se refetcha
 // refetchIntervalInBackground: true // refetch incluso si no esta en focus
-
-export const useAddSuperHeroData = () => {
-  return useMutation(addSuperHero);
-};
