@@ -1,4 +1,4 @@
-import { useQueries } from "react-query";
+import { useQueries } from "@tanstack/react-query";
 import axios from "axios";
 
 const fetchSuperHero = (heroId: string) => {
@@ -10,14 +10,14 @@ export default function DynamicParallelPage({
 }: {
   heroIds: string[];
 }) {
-  const queryResults = useQueries(
-    heroIds.map(id => {
+  const queryResults = useQueries({
+    queries: heroIds.map(id => {
       return {
         queryKey: ["super-hero", id],
         queryFn: () => fetchSuperHero(id)
       };
     })
-  );
+  });
 
   console.log({ queryResults });
   return <div>Dynamic Parallel - Check the console</div>;

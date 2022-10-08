@@ -21,11 +21,7 @@
       "id": 4
     },
     {
-<<<<<<< HEAD
       "name": "second",
-=======
-      "name": "test 1",
->>>>>>> 5ec881a (22. query invalidation, updating when mutating data with http requests)
       "alterEgo": "test",
       "id": 5
     }
@@ -53,11 +49,7 @@
   "channels": [
     {
       "id": "codeevolution",
-      "courses": [
-        "react",
-        "flutter",
-        "android"
-      ]
+      "courses": ["react", "flutter", "android"]
     }
   ],
   "colors": [

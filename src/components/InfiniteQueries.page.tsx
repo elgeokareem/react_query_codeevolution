@@ -1,4 +1,4 @@
-import { useInfiniteQuery } from "react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 import { Colors } from "../types";
 import { Fragment } from "react";

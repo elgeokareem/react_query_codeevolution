@@ -1,5 +1,5 @@
-import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import SuperHeroesPage from "./components/Superheroes.page";
 import RQSuperHeroesPage from "./components/RQSuperHeroes.page";

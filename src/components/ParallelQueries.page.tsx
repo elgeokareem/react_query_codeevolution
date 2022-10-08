@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 function fetchSuperHeroes() {
@@ -9,8 +9,8 @@ function fetchFriends() {
 }
 
 export default function ParallelQueriesPage() {
-  useQuery("super-heroes", fetchSuperHeroes);
-  useQuery("friends", fetchFriends);
+  useQuery(["super-heroes"], fetchSuperHeroes);
+  useQuery(["friends"], fetchFriends);
 
   return <div>Parallel queries</div>;
 }
